@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OmniBench</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Towards The Future of Universal Omni-Language Models">
+    <meta name="keywords" content="OmniBench, MLLM, MLLM Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> OmniBench: Towards The Future of Universal Omni-Language Models</title>
+
+    <link rel="icon" href="./static/images/logo.jpg">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔OmniBench: Towards The Future of Universal Omni-Language Models</h2>
+            <div class="content has-text-justified">
+              <p>
+                <!-- <b>🔥[2024-09-22]: We release the new benchmark for text, image, and audio large language models!</b> -->
+              </p>
+          </div>
+
+        </div>
+        <!--/ Abstract. -->
+    </div>
+    </section>
+
+    <style>
+      .container {
+          max-width: 800px !important; 
+          margin: 0 auto;
+      }
+      .columns {
+          margin: -0.5rem; 
+      }
+      .column {
+          padding: 0.5rem;
+      }
+      .column.is-half {
+          width: 50%;
+          flex: none;
+      }
+      .card {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+      }
+      .image-container {
+          width: 100%;
+          aspect-ratio: 4 / 3; 
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f5f5f5;
+      }
+      .image-container img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+      }
+      .card-content {
+          padding: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+      }
+      .audio-item .title.is-4 {
+          font-size: 0.9rem;
+          margin-bottom: 0.3rem;
+      }
+      audio {
+          width: 100%;
+          height: 30px;
+          margin-top: auto;
+      }
+  </style>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container" style="margin-bottom: 1vh;">
+                <div class="columns is-centered has-text-centered">
+                    <h1 class="title is-3 publication-subtitle" id="samples">Data Samples Across Categories </h1> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/action_and_activity.jpg" alt="Action and Activity">
+                            </div>
+                            <h3 class="title is-4">Action and Activity</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/action_and_activity.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/contextual_and_environmental.jpg" alt="Contextual and Environmental">
+                            </div>
+                            <h3 class="title is-4">Contextual and Environmental</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/contextual_and_environmental.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/count_and_quantity.jpg" alt="Count and Quantity">
+                            </div>
+                            <h3 class="title is-4">Count and Quantity</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/count_and_quantity.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/identity_and_relationship.jpg" alt="Identity and Relationship">
+                            </div>
+                            <h3 class="title is-4">Identity and Relationship</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/identity_and_relationship.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/object_identification_and_description.jpg" alt="Object Identification and Description">
+                            </div>
+                            <h3 class="title is-4">Object Identification and Description</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/object_identification_and_description.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/plot_inference.jpg" alt="Plot Inference">
+                            </div>
+                            <h3 class="title is-4">Plot Inference</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/plot_inference.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/story_description.jpg" alt="Story Description">
+                            </div>
+                            <h3 class="title is-4">Story Description</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/story_description.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card audio-item">
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="static/images/examples/text_and_symbols.jpg" alt="Text and Symbols">
+                            </div>
+                            <h3 class="title is-4">Text and Symbols</h3>
+                            <audio controls>
+                                <source src="static/images/sample_audios/text_and_symbols.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATASET SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">
+          <img src="static/images/logo.jpg" alt="Logo" class="mmmu-logo"/>
+          <span class="mmmu">OmniBench</span>
+        </h1>
+      </div>
+    </section>
+
+
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <!-- <div class="hero-body has-text-centered"> -->
+        <!-- <h1 class="title is-1 mmmu">Experiment Results</h1> -->
+      <!-- </div> -->
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                The main focus of OmniBench is to evaluate how well could the omni-language models (OLMs) understand and reconstruct the context given information from image, audio and text modalities.
+                Setting up questions with four available options for the models, we use accuracy, i.e., the ratio matched letter of the correct option and model response, as the evaluation metric (n.b., the accuracy of a random guess model is 25% under this setting).
+              </p>
+            </div>
+            <br>
+            <div class="model-labels-container">
+              <!-- <span class="leaderboard-label human_expert">Human Expert</span> -->
+              <span class="leaderboard-label open_source_olm">Open-Source OLM</span>
+              <span class="leaderboard-label proprietary_olm">Proprietary OLM</span>
+              <br><br>
+              <span class="leaderboard-label open_source_vlmalm">Open-Source VLM or ALM</span>
+              <span class="leaderboard-label proprietary_vlmalm">Proprietary VLM or ALM</span>
+            </div>
+            <br>
+            <div class="content has-text-centered">
+              <p>
+                The first row suggets the input context, where "Img. & Aud." refers to vanilla image and audio, and "(T)" refers to the textual alternative of image and audio.
+                Click on the 4 setting columns to expand detailed results.
+              </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="mmmu-table">
+                  <thead>
+                    <tr>
+                      <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>
+                      <th class="IA-details-cell clickable" colspan="1">Img. & Aud.</th>
+                      <th class="TI-details-cell clickable" colspan="1">Img.(T) & Aud.</th>
+                      <th class="TA-details-cell clickable" colspan="1">Img. & Aud. (T)</th>
+                      <th class="TIA-details-cell clickable" colspan="1">Img. (T) & Aud. (T)</th>
+                    </tr>
+                    <tr>
+                      <th class="sortable clickable" data-sort="string">Name</th>
+                      <th class="clickable" data-sort="string">Size</th>
+                      <th class="sortable clickable" data-sort="date">Date</th>
+                        <th class="sortable clickable IA-overall" data-sort="number">Overall</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Action & Activity</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Story Description</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Plot Inference</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Object Identification & Description</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Contextual & Environmental</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Identity & Relationship</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Text & Symbols</th>
+                        <th class="hidden IA-details sortable clickable" data-sort="number">Count & Quantity</th>
+                        <th class="sortable clickable TI-overall" data-sort="number">Overall</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Action & Activity</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Story Description</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Plot Inference</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Object Identification & Description</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Contextual & Environmental</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Identity & Relationship</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Text & Symbols</th>
+                        <th class="hidden TI-details sortable clickable" data-sort="number">Count & Quantity</th>
+                        <th class="sortable clickable TA-overall" data-sort="number">Overall</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Action & Activity</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Story Description</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Plot Inference</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Object Identification & Description</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Contextual & Environmental</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Identity & Relationship</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Text & Symbols</th>
+                        <th class="hidden TA-details sortable clickable" data-sort="number">Count & Quantity</th>
+                        <th class="sortable clickable TIA-overall" data-sort="number">Overall</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Action & Activity</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Story Description</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Plot Inference</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Object Identification & Description</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Contextual & Environmental</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Identity & Relationship</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Text & Symbols</th>
+                        <th class="hidden TIA-details sortable clickable" data-sort="number">Count & Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Table body will be populated dynamically -->
+                  </tbody>
+                </table>
+                <p class="test-desc"> Overall results of different models on the Omnibench leaderboard.</p>
+              </div>
+            </div>
+            </div>
+        <!-------------------------------------------------------------------- Difficulty Levels SECTION -------------------------------------------------------------------->
+    </section>
+
+    <!-- @PAN TODO: bibtex -->
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
